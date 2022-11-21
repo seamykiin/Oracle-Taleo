@@ -1,0 +1,37 @@
+#Converting the data from csv to DataFrame
+import pandas as pd
+OrderDetails=pd.read_csv("//Users//jalajkrishna//Desktop//orders_data.csv")#Conversion of data using read_csv function
+print("Oracle taleo")
+print("----------------------------------------------")
+OrderDetails=OrderDetails.set_index("Order_no")
+#print(OrderDetails)
+print(OrderDetails.iloc[1:10,1])
+#print(OrderDetails.dtypes)
+print("----------------------------------------------")
+
+#
+j=1
+while j!=4:
+    print("1. Enter 1 to edit the details of the orders.\n2. Enter 2 to access the values of the orders.\n5. Enter 3 to update/add/delete/modify the order details.\n4. Enter 4 to exit")
+    j=eval(input())
+    if j==1:
+        print("Hello")
+        print("----------------------------------------------")
+    elif j==2:
+        i="yes"
+        while i=="yes":
+            Orn=input("Enter your Order_no:")
+            print("Your OrderDetails are:")
+            print("-----------------------------------------------------------------")
+            print(OrderDetails.loc[Orn])
+            print("-----------------------------------------------------------------")
+            i=input("DO you wish to continue[yes/no]")
+        if i=="no":
+            i="no"
+        else:
+            print("Please recheck your input.")
+            print("----------------------------------------------")
+    elif j==3:
+        print("1. Enter 1 to Update an existing value.\n2.Enter two to delete and existing value.\n3. Enter 3 to ")
+else: 
+    print('Thank you for using our software!!!')
